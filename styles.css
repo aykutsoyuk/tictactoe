@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.board {
+    border: 1px solid rgb(0, 107, 126);
+    background-color: rgb(247, 247, 255);
+    border-radius: 3px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px;
+    width: 180px;
+    height: 280px;
+    padding-top: 20px;
+    padding-left: 15px;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+.cell {
+    background-color: rgb(247, 247, 255);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    border: 1px solid rgb(0, 107, 126);
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 43px;
+    color: rgb(82, 92, 102);
+    user-select: none;
+}
+
+#cell1, #cell2, #cell3 {
+    border-top: none;
+}
+#cell3, #cell6, #cell9 {
+    border-right: none;
+}
+#cell1, #cell4, #cell7 {
+    border-left: none;
+}
+#cell7, #cell8, #cell9 {
+    border-bottom: none;
+}
+
+/* .cell:hover {
+    background-color: rgb(240, 243, 247);
+} */
+
+.resultBoard {
+    text-align: center;
+    align-items: center;
+}
+.result-win {
+    background-color: rgb(0, 223, 85);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    display: none;
+    z-index: 10;
+}
+
+.result-lose {
+    background-color: rgb(255, 34, 34);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    display: none;
+    z-index: 10;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(82, 92, 102);
+
+}
+/* 
+.start {
+
+    left: 70px;
+    bottom: 180px;
+    width: 100px;
+    height: 40px;
+    border:2px solid rgb(82, 92, 102);
+    font-size: 20px;
+    border-radius: 2px;
+} */
+
+.restart {
+    width: 60px;
+    border-radius: 50%;
+    height: 50px;
+    left: 61px;
+    border:2px solid rgb(82, 92, 102);
+    bottom: 20px;
+    position: absolute;
+}
+
+.restart:hover , .start:hover {
+    background-color: rgb(241, 252, 249);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* önce display none sonra iki ayrı class verip kazandın
+yeşil, kaybettin kırmızı olacak, oyun tahtası opacity si düşecek,
+display none kaldırılacak */
