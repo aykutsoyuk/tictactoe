@@ -17,6 +17,12 @@ const winning = [
 runGame()
 
 
+restartBtn.addEventListener('click', function(){
+        cells.forEach(cell => cell.textContent = "")
+        document.querySelector("#result").removeAttribute('class')
+    })
+
+
 function runGame() { 
     cells.forEach(cell => cell.addEventListener('click', function (e) {
         if (e.target.textContent === "") {
