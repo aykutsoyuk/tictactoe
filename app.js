@@ -5,18 +5,41 @@ const board = document.querySelector(".board")
 
 const cells = document.querySelectorAll(".cell")
 
+const winning = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,4,8],
+    [2,4,6],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8]
+]
+
 runGame()
+result()
 
 function runGame() { 
     cells.forEach(cell => cell.addEventListener('click', function (e) {
         if (e.target.textContent === "") {
             cell.innerHTML = 'X'
-            compChoice()
+            setTimeout(compChoice, 700)
+        
         }
         
     }))}
      
-
+function result() {
+    if (winning[0].forEach(arr => cells[arr].textContent === "O") ||
+        winning[1].forEach(arr => cells[arr].textContent === "O") ||
+        winning[2].forEach(arr => cells[arr].textContent === "O") ||
+        winning[3].forEach(arr => cells[arr].textContent === "O") ||
+        winning[4].forEach(arr => cells[arr].textContent === "O") ||
+        winning[5].forEach(arr => cells[arr].textContent === "O") ||
+        winning[6].forEach(arr => cells[arr].textContent === "O") ||
+        winning[7].forEach(arr => cells[arr].textContent === "O")) {
+        console.log("COMP kazandı")
+}}
 
 function compChoice() {
     const j = [0,2,6,8]
