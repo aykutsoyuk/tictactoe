@@ -148,6 +148,14 @@ function compChoice() {
         randomM.innerHTML = "O"
     } else if (cells[5].textContent === cells[7].textContent && cells[7].textContent === "X" && randomN.textContent === ""){
         randomN.innerHTML = "O"
+    } else if (cells[2].textContent === cells[4].textContent && cells[4].textContent === "X" && cells[6].textContent === "O"){
+        cells[0].innerHTML = "O"
+    } else if (cells[0].textContent === cells[4].textContent && cells[4].textContent === "X" && cells[8].textContent === "O"){
+        cells[6].innerHTML = "O"
+    } else if (cells[6].textContent === cells[4].textContent && cells[4].textContent === "X" && cells[2].textContent === "O"){
+        cells[8].innerHTML = "O"
+    } else if (cells[8].textContent === cells[4].textContent && cells[4].textContent === "X" && cells[0].textContent === "O"){
+        cells[2].innerHTML = "O"
     } else if (randomJ.textContent === ""){
         randomJ.innerHTML = "O"
     } else if (randomCell.textContent === ""){
