@@ -69,6 +69,16 @@ function result() {
 
 
 function compChoice() {
+    const a = [0,1,6,7]
+    const randomA = cells[a[Math.floor(Math.random() * a.length)]]
+    const b = [0,2,3,5]
+    const randomB = cells[b[Math.floor(Math.random() * b.length)]]
+    const c = [1,2,7,8]
+    const randomC = cells[c[Math.floor(Math.random() * c.length)]]
+    const d = [3,5,6,8]
+    const randomD = cells[d[Math.floor(Math.random() * d.length)]]
+    const s = [1,3,5,7]
+    const randomS = cells[s[Math.floor(Math.random() * s.length)]]
     const j = [0,2,6,8]
     const randomJ = cells[j[Math.floor(Math.random() * j.length)]]
     const k = [0,2,6]
@@ -118,6 +128,18 @@ function compChoice() {
         cells[8].innerHTML = "O"
     } else if (cells[4].textContent === ""){
         cells[4].innerHTML = "O"
+    } else if (((cells[3].textContent === cells[2].textContent && cells[2].textContent === "X") || (cells[3].textContent === cells[8].textContent && cells[8].textContent === "X")) && randomA.textContent === "") {
+        randomA.innerHTML = "O"
+    } else if (((cells[1].textContent === cells[6].textContent && cells[6].textContent === "X") || (cells[1].textContent === cells[8].textContent && cells[8].textContent === "X")) && randomB.textContent === "") {
+        randomB.innerHTML = "O"
+    } else if (((cells[5].textContent === cells[0].textContent && cells[0].textContent === "X") || (cells[5].textContent === cells[6].textContent && cells[6].textContent === "X")) && randomC.textContent === "") {
+        randomC.innerHTML = "O"
+    } else if (((cells[7].textContent === cells[0].textContent && cells[0].textContent === "X") || (cells[7].textContent === cells[2].textContent && cells[2].textContent === "X")) && randomD.textContent === "") {
+        randomD.innerHTML = "O"
+    } else if (cells[0].textContent === cells[8].textContent && cells[8].textContent === "X" && randomS.textContent === ""){
+        randomS.innerHTML = "O"
+    } else if (cells[2].textContent === cells[6].textContent && cells[6].textContent === "X" && randomS.textContent === ""){
+        randomS.innerHTML = "O"
     } else if (cells[1].textContent === cells[3].textContent && cells[3].textContent === "X" && randomK.textContent === ""){
         randomK.innerHTML = "O"
     } else if (cells[1].textContent === cells[5].textContent && cells[5].textContent === "X" && randomL.textContent === ""){
