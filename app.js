@@ -1,8 +1,6 @@
 // const startBtn = document.querySelector(".start")
 const restartBtn = document.querySelector(".restart")
-const resultMes = document.querySelector("#result")
 const board = document.querySelector(".board")
-
 const cells = document.querySelectorAll(".cell")
 
 const winning = [
@@ -17,29 +15,41 @@ const winning = [
 ]
 
 runGame()
-result()
+
 
 function runGame() { 
     cells.forEach(cell => cell.addEventListener('click', function (e) {
         if (e.target.textContent === "") {
-            cell.innerHTML = 'X'
-            setTimeout(compChoice, 700)
-        
+            cell.innerHTML = 'X'    
         }
-        
-    }))}
-     
+        setTimeout(compChoice, 700)
+        result()
+    }))
+    
+}
+ 
+
 function result() {
-    if (winning[0].forEach(arr => cells[arr].textContent === "O") ||
-        winning[1].forEach(arr => cells[arr].textContent === "O") ||
-        winning[2].forEach(arr => cells[arr].textContent === "O") ||
-        winning[3].forEach(arr => cells[arr].textContent === "O") ||
-        winning[4].forEach(arr => cells[arr].textContent === "O") ||
-        winning[5].forEach(arr => cells[arr].textContent === "O") ||
-        winning[6].forEach(arr => cells[arr].textContent === "O") ||
-        winning[7].forEach(arr => cells[arr].textContent === "O")) {
-        console.log("COMP kazandı")
-}}
+    const resultMes = document.querySelector("#result")
+    winning[0].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[1].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[2].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[3].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[4].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[5].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[6].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[7].every(arr => cells[arr].textContent === "O") ? resultMes.classList.add("result-lose") : false
+    winning[0].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[1].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[2].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[3].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[4].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[5].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[6].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    winning[7].every(arr => cells[arr].textContent === "X") ? resultMes.classList.add("result-win") : false
+    
+
+}
 
 function compChoice() {
     const j = [0,2,6,8]
