@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(34, 172, 182);
+}
+
+h1 {
+    font-family: 'Spinnaker', sans-serif;
+    color: lightcyan;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.game-box {
+    text-align: center;
+}
+
 .board {
-    border: 1px solid rgb(0, 107, 126);
-    background-color: rgb(247, 247, 255);
-    border-radius: 3px;
+
     text-align: center;
     display: grid;
     grid-template-rows: 50px 50px 50px;
@@ -22,16 +37,16 @@
 }
 
 .cell {
-    background-color: rgb(247, 247, 255);
+    
     width: 50px;
     height: 50px;
     text-align: center;
     align-items: center;
-    border: 1px solid rgb(0, 107, 126);
+    border: 1px solid rgb(205, 234, 240);
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 43px;
-    color: rgb(82, 92, 102);
+    font-family: 'Spinnaker', sans-serif;
+    font-size: 37px;
+    color: rgb(0, 69, 78);
     user-select: none;
 }
 
@@ -58,27 +73,27 @@
 }
 .result-win {
     background-color: #f7f5f5b7;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Spinnaker', sans-serif;
     font-size: 40px;
-    color: rgb(0, 179, 0);
+    color: rgb(0, 204, 0);
     width: 100%;
     height: 100%;
     top: 0;
-    padding-top: 100px;
+    padding-top: 155px;
     position: absolute;
     z-index: 10;
     user-select: none;
 }
 
 .result-lose {
-    background-color: #f7f5f5b7;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f7f5f5b9;
+    font-family: 'Spinnaker', sans-serif;
     font-size: 40px;
-    color: rgb(179, 0, 0);
+    color: rgb(238, 0, 0);
     width: 100%;
     height: 100%;
     top: 0;
-    padding-top: 100px;
+    padding-top: 155px;
     position: absolute;
     z-index: 10;
     user-select: none;
@@ -87,8 +102,8 @@
 button {
     outline: none;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(82, 92, 102);
+    font-family: 'Spinnaker', sans-serif;
+    
 
 }
 /* 
@@ -104,24 +119,29 @@ button {
 } */
 
 .restart {
-    width: 60px;
-    border-radius: 50%;
-    height: 50px;
-    left: 42%;
-    top: 55%;
-    border:2px solid rgb(82, 92, 102);
-    z-index: 10;
-    position: absolute;
-    
+    background-color: rgb(34, 172, 182);
+    outline: none;
+    border: 1px white;
+    z-index: 15;
+    color: lightcyan;
+    grid-row: 5;
+    grid-column: 2;
+    border-radius: 2px;
 }
 
-.restart:hover , .start:hover {
-    background-color: rgb(241, 252, 249);
+.game-mode {
+    border-radius: 2px;
+    color: lightcyan;
+    font-size: 15px;
+    margin-top: 10px;
+    border: 1px white;
+    background-color: rgb(34, 172, 182);
+   
 }
 
-
-
-
+.active {
+    color: rgb(0, 84, 95);
+}
 
 
 

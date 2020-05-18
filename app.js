@@ -36,11 +36,11 @@ restartBtn.addEventListener('click', function(){
 
 function userWins() {
     document.querySelector("#result").classList.add("result-win")
-    document.querySelector("#result").innerHTML = "WİNNER"    
+    document.querySelector("#result").innerHTML = "you win"    
 }
 function compWins() {
     document.querySelector("#result").classList.add("result-lose")
-    document.querySelector("#result").innerHTML = "LOOOOOOSER"    
+    document.querySelector("#result").innerHTML = "you lose"    
 }
  
 
