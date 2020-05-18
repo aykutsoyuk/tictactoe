@@ -3,6 +3,10 @@ const restartBtn = document.querySelector(".restart")
 const board = document.querySelector(".board")
 const cells = document.querySelectorAll(".cell")
 
+const easyBtn = document.querySelector("#easyBtn")
+const hardBtn = document.querySelector("#hardBtn")
+const bounce = document.getElementsByClassName("bounce")
+
 const winning = [
     [0,1,2],
     [3,4,5],
@@ -15,24 +19,36 @@ const winning = [
 ]
 
 
+hardBtn.addEventListener('click', function(){
+    hardBtn.classList.add("active")
+    easyBtn.classList.remove("active")
+})
+easyBtn.addEventListener('click', function(){
+    easyBtn.classList.add("active")
+    hardBtn.classList.remove("active")
+})
+
 restartBtn.addEventListener('click', function(){
         cells.forEach(cell => cell.textContent = "")
         document.querySelector("#result").removeAttribute('class')
         document.querySelector("#result").innerHTML = ""
         
     })
-
-   
+////////////////////////////
+function compThinking() {
+    bounce.style.removeProperty("display")
+}   
 
     cells.forEach(cell => cell.addEventListener('click', function (e) {
         if (e.target.textContent === "") {
             cell.innerHTML = 'X'  
-            setTimeout(compChoice, 100)  
+            setTimeout(compChoiceHard, 300)
+            setTimeout(compThinking, 100)  
         }
         
         
     }))
-
+/////////////////////////////////////////
 
 function userWins() {
     document.querySelector("#result").classList.add("result-win")
@@ -68,7 +84,7 @@ function result() {
 
 
 
-function compChoice() {
+function compChoiceHard() {
     const a = [0,1,6,7]
     const randomA = cells[a[Math.floor(Math.random() * a.length)]]
     const b = [0,2,3,5]
