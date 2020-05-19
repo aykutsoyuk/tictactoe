@@ -48,12 +48,24 @@ h1 {
     border: 1px solid rgb(205, 234, 240);
     cursor: pointer;
     font-family: 'Spinnaker', sans-serif;
-    font-size: 37px;
+    font-size: 40px;
     color: rgb(0, 69, 78);
     user-select: none;
+    transition: all 0.3s ease;
+    animation-name: opacity;
+    animation-duration: 1000ms;
     /* display: none; */
 
 }
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity:100%;
+    }
+}
+
 
 #cell1, #cell2, #cell3 {
     border-top: none;
@@ -68,9 +80,10 @@ h1 {
     border-bottom: none;
 }
 
-/* .cell:hover {
-    background-color: rgb(240, 243, 247);
-} */
+.cell:hover {
+    background-color: rgb(36, 177, 187);
+    
+}
 
 .invisible {
     display: none;
@@ -140,6 +153,8 @@ button {
     grid-column: span 3;
     border-radius: 4px;
     margin-top: 15px;
+    animation-name: opacity;
+    animation-duration: 1000ms;
     /* display: none; */
 }
 
