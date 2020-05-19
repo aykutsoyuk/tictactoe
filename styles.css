@@ -15,6 +15,7 @@ h1 {
     color: lightcyan;
     text-align: center;
     margin-top: 10px;
+    font-size: 40px;
 }
 
 .game-box {
@@ -28,7 +29,7 @@ h1 {
     grid-template-rows: 50px 50px 50px;
     grid-template-columns: 50px 50px 50px;
     width: 180px;
-    height: 210px;
+    height: 220px;
     padding-top: 20px;
     padding-left: 15px;
     margin: auto;
@@ -48,6 +49,8 @@ h1 {
     font-size: 37px;
     color: rgb(0, 69, 78);
     user-select: none;
+    display: none;
+
 }
 
 #cell1, #cell2, #cell3 {
@@ -124,24 +127,60 @@ button {
     border: 1px white;
     z-index: 15;
     color: lightcyan;
+    border: 1px solid rgb(255, 255, 255);
     grid-row: 5;
+    font-size: 20px;
+    grid-column: span 3;
+    border-radius: 4px;
+    margin-top: 15px;
+    display: none;
+}
+
+.start {
+    background-color: rgb(34, 172, 182);
+    outline: none;
+    border: 1px solid rgb(255, 255, 255);
+    color: lightcyan;
+    grid-row: 3;
     grid-column: 2;
-    border-radius: 2px;
+    grid-column: span 3;
+    font-size: 25px;
+    border-radius: 4px;
+    /* display: none; */
 }
 
 .game-mode {
     border-radius: 2px;
     color: lightcyan;
     font-size: 15px;
-    margin-top: 10px;
     border: 1px white;
     background-color: rgb(34, 172, 182);
-   
+    grid-row: 1;
+    grid-column: span 1;    
+    /* display: none;     */
+}
+
+#hardBtn {
+    grid-column: 3;
+}
+
+.chose-difficulty {
+    font-family: 'Spinnaker', sans-serif;
+    font-size: 10px;
+    margin-top: 20px;
+    color: rgb(0, 84, 95);
+    grid-row: 2;
+    grid-column: 1 / 4;
+    /* display: none; */
 }
 
 .active {
+    padding-bottom: 1px;
+    border-bottom:1px solid rgb(0, 84, 95);
     color: rgb(0, 84, 95);
+    font-weight: bold;
 }
+
 
 .bounce {
     background-color: rgb(34, 172, 182);
@@ -194,9 +233,12 @@ button {
 @keyframes bounce {
     from {
         margin: 100%;
+
     }
     to {
         margin: 0;
+
+        
     }
 }
 
