@@ -5,6 +5,8 @@ const cells = document.querySelectorAll(".cell")
 
 const easyBtn = document.querySelector("#easyBtn")
 const hardBtn = document.querySelector("#hardBtn")
+const startButton = document.querySelector("#startBtn")
+
 
 
 const winning = [
@@ -18,21 +20,38 @@ const winning = [
     [2,5,8]
 ]
 
+
+startButton.addEventListener("click", function(e) {
+    e.target.style.display = "none"
+    document.querySelector(".chose-difficulty").style.display = "none"
+    easyBtn.style.display = "none"
+    hardBtn.style.display = "none"
+    cells.forEach(cell => cell.classList.remove("invisible")) 
+    restartBtn.classList.remove("invisible")
+    newGame()
+
+})
+
+
+function newGame() {
+    if(hardBtn.classList.contains("active")){
+        hardGameBegin()
+    } else {
+        easyGameBegin()
+    }
+}
+
+
 //fonksiyonlar iptal olmadığı için önce hangisi başlarsa o devam ediyon
-hardBtn.addEventListener('click', function(e){
+hardBtn.addEventListener('click', function(){
     hardBtn.classList.add("active")
-    easyBtn.classList.remove("active")
-    e.preventDefault()
-    hardGameBegin()
-    
-}, false)
-easyBtn.addEventListener('click', function(e){
+    easyBtn.classList.remove("active")  
+})
+easyBtn.addEventListener('click', function(){
     easyBtn.classList.add("active")
     hardBtn.classList.remove("active")
-    e.preventDefault()
-    easyGameBegin()
     
-}, false)
+})
 
 restartBtn.addEventListener('click', function(){
         cells.forEach(cell => cell.textContent = "")
