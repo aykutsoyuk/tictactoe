@@ -9,6 +9,7 @@ const startButton = document.querySelector("#startBtn")
 
 let userActive = true
 
+
 const winning = [
     [0,1,2],
     [3,4,5],
@@ -58,6 +59,7 @@ easyBtn.addEventListener('click', function(){
 })
 
 restartBtn.addEventListener('click', function(){
+
         cells.forEach(cell => cell.textContent = "")
         document.querySelector("#result").removeAttribute('class')
         document.querySelector("#result").innerHTML = ""
@@ -75,8 +77,9 @@ restartBtn.addEventListener('click', function(){
             if (userActive && e.target.textContent === "") {
                 e.target.innerHTML = 'X'
                 userActive = false
-                setTimeout(compChoiceHard, 500)
-
+            
+                setTimeout(compChoiceHard, 400)
+                result()
                 // setTimeout(compThinking, 100)  
             } 
             
@@ -90,8 +93,9 @@ restartBtn.addEventListener('click', function(){
             if (userActive && e.target.textContent === "") {
                 e.target.innerHTML = 'X' 
                 userActive = false
-                
-                setTimeout(compChoiceEasy, 500)
+            
+                setTimeout(compChoiceEasy, 400)
+                result()
                 // setTimeout(compThinking, 100)  
             }
             
@@ -108,17 +112,21 @@ restartBtn.addEventListener('click', function(){
 
 function userWins() {
     document.querySelector("#result").classList.add("result-win")
-    document.querySelector("#result").innerHTML = "you win"    
+    document.querySelector("#result").innerHTML = "you win"
+     
 }
 function compWins() {
     document.querySelector("#result").classList.add("result-lose")
-    document.querySelector("#result").innerHTML = "you lose"    
+    document.querySelector("#result").innerHTML = "you lose" 
+      
 }
 
 // function draw() {
 //     document.querySelector("#result").classList.add("result-draw")
 //     document.querySelector("#result").innerHTML = "its a draw"
 // }
+
+
 
 function result() {
     winning[0].every(arr => cells[arr].textContent === "O") ? compWins() : false
@@ -246,7 +254,10 @@ function compChoiceHard() {
     }
     result()
     userActive = true
+
 }
+
+
 
 function compChoiceEasy() {
     const randomCell = cells[Math.floor(Math.random() * 9)]
