@@ -7,7 +7,7 @@ const easyBtn = document.querySelector("#easyBtn")
 const hardBtn = document.querySelector("#hardBtn")
 const startButton = document.querySelector("#startBtn")
 
-
+let userActive = true
 
 const winning = [
     [0,1,2],
@@ -21,19 +21,23 @@ const winning = [
 ]
 
 
-startButton.addEventListener("click", function(e) {
+
+    
+    startButton.addEventListener("click", function(e) {
     e.target.style.display = "none"
     document.querySelector(".chose-difficulty").style.display = "none"
     easyBtn.style.display = "none"
     hardBtn.style.display = "none"
     cells.forEach(cell => cell.classList.remove("invisible")) 
     restartBtn.classList.remove("invisible")
+    
     newGame()
 
 })
 
 
 function newGame() {
+    
     if(hardBtn.classList.contains("active")){
         hardGameBegin()
     } else {
@@ -67,24 +71,27 @@ restartBtn.addEventListener('click', function(){
 
 
     function hardGameBegin() {
-        cells.forEach(cell => cell.addEventListener('click', function (e) {
-            if (e.target.textContent === "") {
-                cell.innerHTML = 'X'  
-                setTimeout(compChoiceHard, 100)
-                // setTimeout(compThinking, 100)  
-            }
-            
-            
-        }))
-    
-    }
+            cells.forEach(cell => cell.addEventListener('click', function (e) {
+            if (userActive && e.target.textContent === "") {
+                e.target.innerHTML = 'X'
+                userActive = false
+                setTimeout(compChoiceHard, 500)
 
+                // setTimeout(compThinking, 100)  
+            } 
+            
+            
+        }
+        )) 
+    } 
 
     function easyGameBegin() {
         cells.forEach(cell => cell.addEventListener('click', function (e) {
-            if (e.target.textContent === "") {
-                cell.innerHTML = 'X'  
-                setTimeout(compChoiceEasy, 100)
+            if (userActive && e.target.textContent === "") {
+                e.target.innerHTML = 'X' 
+                userActive = false
+                
+                setTimeout(compChoiceEasy, 500)
                 // setTimeout(compThinking, 100)  
             }
             
@@ -107,10 +114,13 @@ function compWins() {
     document.querySelector("#result").classList.add("result-lose")
     document.querySelector("#result").innerHTML = "you lose"    
 }
- 
+
+// function draw() {
+//     document.querySelector("#result").classList.add("result-draw")
+//     document.querySelector("#result").innerHTML = "its a draw"
+// }
 
 function result() {
-    // const resultMes = document.querySelector("#result")
     winning[0].every(arr => cells[arr].textContent === "O") ? compWins() : false
     winning[1].every(arr => cells[arr].textContent === "O") ? compWins() : false
     winning[2].every(arr => cells[arr].textContent === "O") ? compWins() : false
@@ -127,7 +137,7 @@ function result() {
     winning[5].every(arr => cells[arr].textContent === "X") ? userWins() : false
     winning[6].every(arr => cells[arr].textContent === "X") ? userWins() : false
     winning[7].every(arr => cells[arr].textContent === "X") ? userWins() : false
-    
+    // cells.every(cell => cell.textContent !== "") ? draw() : false
 
 }
 
@@ -235,6 +245,7 @@ function compChoiceHard() {
 
     }
     result()
+    userActive = true
 }
 
 function compChoiceEasy() {
@@ -287,4 +298,5 @@ function compChoiceEasy() {
 
     }
     result()
+    userActive = true
 }
