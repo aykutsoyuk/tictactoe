@@ -108,6 +108,7 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px rgba(39, 39, 39, 0.644);
 }
 
 .result-lose {
@@ -122,6 +123,7 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px rgba(39, 39, 39, 0.644);
 }
 
 .result-draw {
@@ -136,6 +138,7 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px rgba(39, 39, 39, 0.644);
 }
 
 button {
@@ -175,7 +178,7 @@ button {
 .game-mode {
   border-radius: 2px;
   color: lightcyan;
-  font-size: 8vh;
+  font-size: 5vh;
   border: 1px white;
   background-color: rgb(34, 172, 182);
   grid-row: 1;
